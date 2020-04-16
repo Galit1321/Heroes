@@ -1,8 +1,8 @@
 const mongoose=require("mongoose");
 let uri="mongodb://localhost:27017/the_supers";
 
-if(pross.env.NODE_ENV=="production"){
-uri=pross.env.MONGODB_URI;}
+if(process.env.NODE_ENV=="production"){
+uri=process.env.MONGODB_URI;}
  mongoose.connect(uri,{useNewUrlParser:true});
  mongoose.connection.on('connected',()=>{
    console.log("============================");
