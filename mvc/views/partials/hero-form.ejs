@@ -1,5 +1,5 @@
 <% if (locals.hero) { %>
-  <form action="update-hero/<%=hero.id%>" method="post" autocomplete="off">
+  <form action="/update-hero/<%=hero.id%>" method="post" autocomplete="off">
     <%  } else { %>
       <form action="create-hero" method="post" autocomplete="off">
         <%  } %>
@@ -11,11 +11,11 @@
           var o=hero.origin;
           var str=hero.stats.strength;
           var p=hero.stats.perception;
-          var e=hero.stats.endurance,
-          var c=hero.stats.charisma,
-          var i=hero.stats.intelligence,
-          var a=hero.stats.agility,
-          var l=hero.stats.luck,
+          var e=hero.stats.endurance;
+          var c=hero.stats.charisma;
+          var i=hero.stats.intelligence;
+          var a=hero.stats.agility;
+          var l=hero.stats.luck;
 
         }
         %>
@@ -26,7 +26,7 @@
 
         <div class="input-group">
           <label class="d-block">Description</label>
-          <textarea name="desc" required rows="7" cols="110" <% if(d) {%> value="<%= d%>" <%}%>></textarea>
+          <textarea name="desc" required rows="7" cols="110"><% if(d) {%> <%=d%><%}%></textarea>
         </div>
 
         <div class="input-group">
@@ -38,43 +38,43 @@
           <div class="input-group flex-align">
             <label for="">Strength</label>
             <input type="range" name="strength" min="0" max="100" <% if(str) {%> value="<%= str %>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(str) {%> <%= str %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Perception</label>
             <input type="range" name="perception" min="0" max="100" <% if(p) {%> value="<%= p%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(p) {%> <%= p %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Endurance</label>
             <input type="range" name="endurance" min="0" max="100" <% if(e) {%> value="<%= e%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(e) {%> <%= e %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Charisma</label>
             <input type="range" name="charisma" min="0" max="100" <% if(c) {%> value="<%= c%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(c) {%> <%=c %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Intelligence</label>
             <input type="range" name="intelligence" min="0" max="100" <% if(i) {%> value="<%= i%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(i) {%> <%= i %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Agility</label>
             <input type="range" name="agility" min="0" max="100" <% if(a) {%> value="<%= a%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(a) {%> <%= a %> <%}%></span>
           </div>
 
           <div class="input-group flex-align">
             <label for="">Luck</label>
             <input type="range" name="luck" min="0" max="100" <% if(l) {%> value="<%= l%>" <%}%>>
-            <span class="amount">50</span>
+            <span class="amount"><% if(l) {%> <%= l %> <%}%></span>
           </div>
         </div>
         <%if(locals.hero){%>

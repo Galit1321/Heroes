@@ -29,7 +29,7 @@
 
                     <h3>Overall: <%= overall %></h3>
                     <form  action="index.html" method="post">
-                      <input type="submit"class="link"  value="Update" formaction="/upade-hero" formmethod="get">
+                      <input type="submit"class="link"  value="Update" formaction="/update-hero/<%= heroes[i].id %>" formmethod="get">
                         <input type="submit"class="link"  value="Delete" formaction="/delete-hero/<%= heroes[i].id%>" formmethod="post">
                     </form>
 
