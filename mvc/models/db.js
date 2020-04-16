@@ -1,8 +1,8 @@
 const mongoose=require("mongoose");
-let uri="mongodb://localhost:27017/the_supers";
-
+let uri="mongodb://heroku_v8pqm5gv:4165960rsr0ebrpaj4leeb3tsj@ds125555.mlab.com:25555/heroku_v8pqm5gv";
+/*
 if(process.env.NODE_ENV=="production"){
-uri=process.env.MONGOLAB_AMBER_URI;}
+uri=process.env.MONGOLAB_AMBER_URI;}*/
  mongoose.connect(uri,{useNewUrlParser:true});
  mongoose.connection.on('connected',()=>{
    console.log("============================");
